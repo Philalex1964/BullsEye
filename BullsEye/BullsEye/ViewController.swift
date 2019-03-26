@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         
         let trackRightImage = UIImage(named: "SliderTrackRight")!
         let trackRightResizable = trackRightImage.resizableImage(withCapInsets: insets)
-        slider.setMaximumTrackImage(trackRightImage, for: .normal)
+        slider.setMaximumTrackImage(trackRightResizable, for: .normal)
         
         startNewGame()
         
@@ -52,12 +52,12 @@ class ViewController: UIViewController {
         let title: String
         if difference == 0 {
             title = "Perfect!"
-            points += 100
+            //points += 100
         } else if difference < 5 {
             title = "You almost hit it!"
-            if difference == 1 {
-                points += 50
-            }
+            //if difference == 1 {
+               // points += 50
+            //}
         } else if difference < 10 {
             title = "Pretty good!"
         } else {
