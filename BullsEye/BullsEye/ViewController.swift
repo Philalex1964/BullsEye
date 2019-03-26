@@ -51,20 +51,20 @@ class ViewController: UIViewController {
         
         let title: String
         if difference == 0 {
-            title = "Perfect!"
+            title = "Отлично! Прямо в точку"
             //points += 100
         } else if difference < 5 {
-            title = "You almost hit it!"
+            title = "Вы почти попали в точку!"
             //if difference == 1 {
                // points += 50
             //}
         } else if difference < 10 {
-            title = "Pretty good!"
+            title = "Очень хорошо!"
         } else {
-            title = "Not even close..."
+            title = "Даже не рядом..."
         }
         
-        let message = "Your score is \(points) points"
+        let message = "Ваш счет \(points) очков"
         
         let alert = UIAlertController(title: title,
                                     message: message,
@@ -97,6 +97,13 @@ class ViewController: UIViewController {
         score = 0
         round = 0
         startNewRound()
+        // Add the following lines
+        let transition = CATransition()
+        transition.type = CATransitionType.fade
+        transition.duration = 1
+        transition.timingFunction = CAMediaTimingFunction(name:
+            CAMediaTimingFunctionName.easeOut)
+        view.layer.add(transition, forKey: nil)
     }
     
     @IBAction func startOver() {
